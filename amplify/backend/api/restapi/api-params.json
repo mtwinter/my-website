@@ -1,0 +1,44 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "awslambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "restapi",
+    "apiName": "restapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "awslambda"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-myapp-dev-184337-authRole",
+        "unAuthRoleName": "amplify-myapp-dev-184337-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "awslambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
